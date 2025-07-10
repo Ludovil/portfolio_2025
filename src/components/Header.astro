@@ -1,8 +1,10 @@
 ---
 import Navigation from "./Navigation.astro";
+const { pageTitle } = Astro.props;
 ---
 
 <header>
+ <p>{pageTitle}</p>
   <nav>
     <Navigation />
   </nav>
