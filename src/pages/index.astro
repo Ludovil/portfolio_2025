@@ -1,8 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Work from "../components/Work.astro";
+import Contact from "../components/Contact.astro";
 const pageTitle = "home";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h1>content</h1>
+  <Hero />
+  <About />
+  <Work />
+  <Contact />
 </BaseLayout>
