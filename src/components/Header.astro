@@ -1,11 +1,26 @@
 ---
 import Navigation from "./Navigation.astro";
-const { pageTitle } = Astro.props;
 ---
 
 <header>
- <p>{pageTitle}</p>
+  <p id="page-title">home</p>
   <nav>
     <Navigation />
   </nav>
 </header>
+
+<script>
+  const sections = document.querySelectorAll("section");
+  const pageTitleEl = document.getElementById("page-title");
+
+  window.addEventListener("scroll", () => {
+    let current = "home";
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 100; // ajuster selon ton header
+      if (scrollY >= sectionTop) {
+        current = section.dataset.title; // ajouter data-title à chaque section
+      }
+    });
+    pageTitleEl.textContent = current;
+  });
+</script>
